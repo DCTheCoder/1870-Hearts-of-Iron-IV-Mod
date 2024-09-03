@@ -1,0 +1,57 @@
+﻿### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = brazilian_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 100
+			AND = {
+				tag = AUS
+				is_debug = yes
+			}
+		}
+	}
+
+	continuous_focus_position = { x = 200 y = 1000 }
+	
+	default = no
+
+
+	focus = {
+		id = unknown
+		x = 20
+		y = 0
+		cost = 5
+		icon = ggfx
+
+		ai_will_do = {
+			base = 10
+		}
+
+		available = {
+			has_war = no
+		}
+		
+		bypass = {
+			has_war_with = PRS
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+
+		completion_reward = {
+    add_stability = 0.05
+    }
+  }
+}
